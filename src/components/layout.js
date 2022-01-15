@@ -1,5 +1,10 @@
 import * as React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
+
+import ReactGA from 'react-ga';
+ReactGA.initialize('G-C33ZXP1VNP');
+ReactGA.pageview(window.location.pathname + window.location.search);
+
 import {
   container,
   heading,
