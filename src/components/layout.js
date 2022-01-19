@@ -11,7 +11,7 @@ import {
 } from './layout.module.css'
 
 ReactGA.initialize('G-C33ZXP1VNP');
-ReactGA.pageview(window.location.pathname + window.location.search);
+// ReactGA.pageview(window.location.pathname + window.location.search);
 
 
 const Layout = ({ pageTitle, children }) => {
