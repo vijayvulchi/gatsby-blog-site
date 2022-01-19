@@ -22,5 +22,6 @@ module.exports = {
     },
     "gatsby-plugin-mdx",
     "gatsby-transformer-sharp",
+    "react-ga",
   ],
 };
