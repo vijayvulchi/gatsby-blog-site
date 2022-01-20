@@ -24,6 +24,7 @@ const Layout = ({ pageTitle, children }) => {
   `)
 
   React.useEffect(() => {
+    ReactGA.initialize('UA-217716738-1');
     ReactGA.pageview(window.location.pathname + window.location.search);
   });
 
