@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { useEffect } from 'react';
 import ReactGA from 'react-ga';
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import {
@@ -10,8 +11,7 @@ import {
   siteTitle,
 } from './layout.module.css'
 
-ReactGA.initialize('G-C33ZXP1VNP');
-// ReactGA.pageview(window.location.pathname + window.location.search);
+// ReactGA.initialize('G-C33ZXP1VNP');
 
 
 const Layout = ({ pageTitle, children }) => {
@@ -24,6 +24,29 @@ const Layout = ({ pageTitle, children }) => {
       }
     }
   `)
+
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  });
+
+  const handleGitHub = () => {
+    ReactGA.event({
+      category: 'Links',
+      action: 'GitHub',
+      label: 'GitHub button clicked!',
+      value: 1
+    });
+  }
+ 
+  // handle StackBlitz button click
+  const handleStackBlitz = () => {
+    ReactGA.event({
+      category: 'Links',
+      action: 'StackBlitz',
+      label: 'StackBlitz button clicked!',
+      value: 1
+    });
+  }
 
   return (
     <div className={container}>
@@ -52,6 +75,10 @@ const Layout = ({ pageTitle, children }) => {
         <h1 className={heading}>{pageTitle}</h1>
         {children}
       </main>
+      <div style={{ marginTop: 15, marginBottom: 15 }}>
+        <input type="button" value="Download GitHub Source" onClick={handleGitHub}></input>
+        <input type="button" value="StackBlitz Project" onClick={handleStackBlitz} style={{ marginLeft: 15 }}></input>
+      </div>
     </div>
   )
 }
