@@ -2,9 +2,15 @@ import * as React from 'react'
 import Layout from '../components/layout'
 import { StaticImage } from 'gatsby-plugin-image'
 import ReactGA from 'react-ga';
-ReactGA.initialize('G-C33ZXP1VNP');
 
 const IndexPage = () => {
+
+  React.useEffect(() => {
+    ReactGA.initialize('UA-217716738-1', {
+      debug: true,
+    });
+  });
+
   return (
     <Layout pageTitle="Home Page">
       <p>I'm making this by following the Gatsby Tutorial.</p>

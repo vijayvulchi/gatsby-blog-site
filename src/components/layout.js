@@ -1,5 +1,4 @@
 import * as React from 'react'
-import { useEffect } from 'react';
 import ReactGA from 'react-ga';
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import {
@@ -11,8 +10,7 @@ import {
   siteTitle,
 } from './layout.module.css'
 
-// ReactGA.initialize('G-C33ZXP1VNP');
-
+// ReactGA.initialize('UA-217716738-1');
 
 const Layout = ({ pageTitle, children }) => {
   const data = useStaticQuery(graphql`
@@ -25,7 +23,7 @@ const Layout = ({ pageTitle, children }) => {
     }
   `)
 
-  useEffect(() => {
+  React.useEffect(() => {
     ReactGA.pageview(window.location.pathname + window.location.search);
   });
 
